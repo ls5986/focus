@@ -1,7 +1,14 @@
 'use client'
 
+import React from 'react'
 import { VideoPlayer } from '@/components/courses/VideoPlayer'
 import { CourseOutline } from '@/components/courses/CourseOutline'
+
+interface PageProps {
+  params: {
+    id: string
+  }
+}
 
 // This would come from your API/database
 const mockCourse = {
@@ -58,7 +65,7 @@ const mockCourse = {
   ]
 }
 
-export default function CoursePage({ params }: { params: { id: string } }) {
+export default function CoursePage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
