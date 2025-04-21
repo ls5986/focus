@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import ReactPlayer from 'react-player'
+import React from 'react'
+import dynamic from 'next/dynamic'
+
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 
 interface VideoPlayerProps {
   url: string
@@ -10,7 +12,7 @@ interface VideoPlayerProps {
 }
 
 export function VideoPlayer({ url, title, onProgress }: VideoPlayerProps) {
-  const [isReady, setIsReady] = useState(false)
+  const [isReady, setIsReady] = React.useState(false)
 
   return (
     <div className="relative aspect-video w-full bg-black rounded-lg overflow-hidden">

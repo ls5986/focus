@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { ChevronDownIcon, ChevronUpIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
 
@@ -23,7 +23,7 @@ interface CourseOutlineProps {
 }
 
 export function CourseOutline({ sections, currentLessonId }: CourseOutlineProps) {
-  const [expandedSections, setExpandedSections] = useState<string[]>(
+  const [expandedSections, setExpandedSections] = React.useState<string[]>(
     sections.map(s => s.id)
   )
 
