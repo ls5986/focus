@@ -1,6 +1,6 @@
 1:HL["/focus/_next/static/media/a34f9d1faa5f3315-s.p.woff2",{"as":"font","type":"font/woff2"}]
 2:HL["/focus/_next/static/css/a72939a6ed74f514.css",{"as":"style"}]
-0:["lx9S_YY1ABUVv5oxI84br",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/focus/_next/static/css/a72939a6ed74f514.css","precedence":"next"}]],"$L4"]]]]
+0:["b-KewA-9udYXDtPZoRLta",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/focus/_next/static/css/a72939a6ed74f514.css","precedence":"next"}]],"$L4"]]]]
 5:I{"id":8246,"chunks":["176:static/chunks/176-f61567fafbe67323.js","826:static/chunks/826-17d0d4e77f3d1dfb.js","185:static/chunks/app/layout-0f07d1b59e9d11ae.js"],"name":"AuthProvider","async":false}
 6:I{"id":7841,"chunks":["176:static/chunks/176-f61567fafbe67323.js","826:static/chunks/826-17d0d4e77f3d1dfb.js","185:static/chunks/app/layout-0f07d1b59e9d11ae.js"],"name":"Header","async":false}
 7:I{"id":7767,"chunks":["272:static/chunks/webpack-6b7ee0995f6566cd.js","971:static/chunks/fd9d1056-39f61ea14b4359e5.js","123:static/chunks/123-e0a9269beee23ff6.js"],"name":"default","async":false}
