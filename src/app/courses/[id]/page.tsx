@@ -1,13 +1,12 @@
-'use client'
+import { CourseContent } from './CourseContent'
 
-import React from 'react'
-import { VideoPlayer } from '@/components/courses/VideoPlayer'
-import { CourseOutline } from '@/components/courses/CourseOutline'
+// Mock data for static generation
+const STATIC_COURSE_IDS = ['1', '2', '3']
 
-interface PageProps {
-  params: {
-    id: string
-  }
+export function generateStaticParams() {
+  return STATIC_COURSE_IDS.map((id) => ({
+    id: id,
+  }))
 }
 
 // This would come from your API/database
@@ -65,52 +64,23 @@ const mockCourse = {
   ]
 }
 
-export default function CoursePage({ params }: PageProps) {
-  return (
-    <div className="min-h-screen bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            <VideoPlayer
-              url={mockCourse.sections[0].lessons[0].videoUrl}
-              title={mockCourse.sections[0].lessons[0].title}
-            />
-            
-            <div className="mt-8">
-              <h1 className="text-3xl font-bold mb-4">{mockCourse.title}</h1>
-              <p className="text-gray-400 mb-6">{mockCourse.description}</p>
-              
-              <div className="card mb-8">
-                <h2 className="text-xl font-semibold mb-4">About the Instructor</h2>
-                <div className="flex items-start space-x-4">
-                  <img
-                    src={mockCourse.instructor.avatar}
-                    alt={mockCourse.instructor.name}
-                    className="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 className="font-semibold">{mockCourse.instructor.name}</h3>
-                    <p className="text-gray-400 text-sm mb-2">{mockCourse.instructor.title}</p>
-                    <p className="text-gray-400">{mockCourse.instructor.bio}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Course Outline */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-8">
-              <h2 className="text-xl font-semibold mb-4">Course Content</h2>
-              <CourseOutline
-                sections={mockCourse.sections}
-                currentLessonId="l1"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+// Mock courses data for static generation
+const mockCourses = {
+  '1': mockCourse,
+  '2': {
+    ...mockCourse,
+    id: '2',
+    title: 'Advanced React Development',
+  },
+  '3': {
+    ...mockCourse,
+    id: '3',
+    title: 'Full Stack Development with Next.js',
+  }
+}
+
+export default function CoursePage({ params }: { params: { id: string } }) {
+  const course = mockCourses[params.id as keyof typeof mockCourses] || mockCourse
+
+  return <CourseContent course={course} />
 } 

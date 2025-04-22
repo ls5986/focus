@@ -11,6 +11,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_BASE_PATH: /focus
 
     steps:
       - uses: actions/checkout@v3
@@ -27,7 +29,9 @@ jobs:
           npm install sharp
 
       - name: Build
-        run: npm run build
+        run: npm run build && npm run export
+        env:
+          NEXT_PUBLIC_BASE_PATH: /focus
 
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll

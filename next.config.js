@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/focus',
+  assetPrefix: '/focus/',
   images: {
-    domains: ['example.com'],
+    unoptimized: true,
+    domains: ['example.com']
   },
   typescript: {
-    ignoreBuildErrors: true,
-  },
+    ignoreBuildErrors: true
+  }
 }
 
 module.exports = nextConfig 
